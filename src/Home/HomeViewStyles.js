@@ -4,7 +4,7 @@ const HomeViewStyles = StyleSheet.create({
   DateContainer: {paddingLeft: 32, paddingTop: 16},
   DateTextStyle: {
     fontSize: 16,
-    color: 'Black',
+    color: '#000',
   },
   SubView: {paddingLeft: 32, paddingTop: 40},
   ButtonView: {paddingTop: 16, paddingLeft: 32},

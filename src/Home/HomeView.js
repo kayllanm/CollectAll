@@ -1,7 +1,8 @@
 import * as React from 'react';
 import {View, SafeAreaView} from 'react-native';
 import moment from 'moment';
-import {Button, Text} from '@react-native-material/core';
+import {Button} from '@react-native-material/core';
+import {Text} from 'react-native-paper';
 
 import HomeViewStyles from './HomeViewStyles';
 
@@ -18,10 +19,10 @@ const HomeView = props => {
         <Text style={DateTextStyle}>{TodaysDate}</Text>
       </View>
       <View style={SubView}>
-        <Text>{greeting}</Text>
+        <Text style={{color: '#000'}}>{greeting}</Text>
       </View>
       <View style={SubView}>
-        <Text>{listOfJobs}</Text>
+        <Text style={{color: '#000'}}>{listOfJobs}</Text>
       </View>
       <View style={ButtonView}>
         <Button
@@ -35,7 +36,7 @@ const HomeView = props => {
         />
       </View>
       <View style={SubView}>
-        <Text>0 Jobs need to be uploaded</Text>
+        <Text style={{color: '#000'}}>0 Jobs need to be uploaded</Text>
       </View>
       <View style={ButtonView}>
         <Button

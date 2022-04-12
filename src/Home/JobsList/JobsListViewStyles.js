@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const JobsListViewStyles = StyleSheet.create({
   Container: {padding: 32},
-  HeadingStyle: {paddingTop: 16, paddingBottom: 16},
+  HeadingStyle: {paddingTop: 16, paddingBottom: 16, color: '#000'},
   ListItemContainer: {
     flexDirection: 'row',
     paddingBottom: 16,
@@ -21,6 +21,7 @@ const JobsListViewStyles = StyleSheet.create({
     padding: 16,
     backgroundColor: 'white',
     width: '90%',
+    color: 'black',
   },
   ListItemText: {flex: 1, fontSize: 18, paddingRight: 20},
 });

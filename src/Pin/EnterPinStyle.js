@@ -1,8 +1,7 @@
-import React from 'react';
 import {StyleSheet} from 'react-native';
 
 export const EnterPinStyles = StyleSheet.create({
-  PinCodeContainer: {backgroundColor: 'white'},
+  PinCodeContainer: {backgroundColor: '#fff', flex: 1},
   PinCodeHeaderContainer: {alignItems: 'center'},
   PinCodeHeaderText: {color: 'black', fontSize: 16},
   PinCodeNumberStyle: {
@@ -12,6 +11,8 @@ export const EnterPinStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 40,
+    marginRight: 16,
+    marginTop: 16,
   },
   PinCodeTextStyle: {
     color: '#9B9B9B',

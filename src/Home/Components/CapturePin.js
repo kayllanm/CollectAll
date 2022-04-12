@@ -1,49 +1,25 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import {Title, Text, TextInput} from 'react-native-paper';
-
+import {TouchableOpacity, View} from 'react-native';
+import {Text, Title} from 'react-native-paper';
 import Delete from '../../assets/delete.svg';
+
 import {EnterPinStyles} from '../../Pin/EnterPinStyle';
 
-const CaptureWeight = props => {
-  const {navigation, title, pinCode, onPressNumber, onPressBack} = props;
+const CapturePin = props => {
+  const {pinCode, onPressNumber, onPressBack, heading} = props;
   const {
-    PinCodeNumberStyle,
-    PinCodeContainer,
     PinCodeHeaderContainer,
-    PinCodeButtonContainer,
     PinCodeDisplayStyle,
+    PinCodeButtonContainer,
+    PinCodeNumberStyle,
   } = EnterPinStyles;
-
-  const FormatNum = num => {
-    const formattedWeight = num?.toLocaleString('en-US', {
-      minimumFractionDigits: 2,
-    });
-
-    return formattedWeight;
-  };
-
   return (
-    <View style={PinCodeContainer}>
+    <View>
       <View style={PinCodeHeaderContainer}>
-        <Title style={{color: '#000'}}>{title}</Title>
+        <Title style={{color: 'black'}}>{heading}</Title>
       </View>
-      <View style={[PinCodeDisplayStyle]}>
-        <TextInput
-          editable={false}
-          placeholder="00000,00"
-          value={FormatNum(pinCode.join(''))}
-          style={{
-            backgroundColor: '#fff',
-            width: '90%',
-            borderWidth: 1,
-            borderColor: '#EFEFEF',
-            borderRadius: 16,
-            borderTopLeftRadius: 16,
-            borderTopRightRadius: 16,
-            color: '#000',
-          }}
-        />
+      <View style={PinCodeDisplayStyle}>
+        <Text style={{color: 'black'}}>{pinCode.join(' ')} </Text>
       </View>
       <View style={PinCodeButtonContainer}>
         <View style={{flexDirection: 'row'}}>
@@ -100,9 +76,11 @@ const CaptureWeight = props => {
         <View style={{flexDirection: 'row'}}>
           <TouchableOpacity
             style={{paddingLeft: 8, width: 100, justifyContent: 'center'}}
-            onPress={() =>
-              console.log('go to forgot passcode screen')
-            }></TouchableOpacity>
+            onPress={() => console.log('go to forgot passcode screen')}>
+            <Text style={{color: '#000', textAlign: 'center'}}>
+              Forgot Passcode
+            </Text>
+          </TouchableOpacity>
           <TouchableOpacity
             style={PinCodeNumberStyle}
             onPress={() => onPressNumber(0)}>
@@ -119,4 +97,4 @@ const CaptureWeight = props => {
   );
 };
 
-export default CaptureWeight;
+export default CapturePin;

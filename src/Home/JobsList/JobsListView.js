@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
+import {Text} from 'react-native-paper';
 import moment from 'moment';
 import Menu from './assets/menu.svg';
 
@@ -37,7 +38,7 @@ const JobsListView = props => {
   ];
   return (
     <View style={Container}>
-      <Text>{TodaysDate}</Text>
+      <Text style={{color: '#000'}}>{TodaysDate}</Text>
       <Text style={HeadingStyle}>Scheduled Jobs</Text>
       {listOfJobs.map(job => (
         <TouchableOpacity
@@ -46,7 +47,7 @@ const JobsListView = props => {
             navigation.navigate('JobDetails');
           }}>
           <View style={ListItemIdContainer}>
-            <Text>{job.id}</Text>
+            <Text style={{color: '#000'}}>{job.id}</Text>
           </View>
           <View style={ListItemTextView}>
             <Text style={ListItemText}>{job.name}</Text>

@@ -1,14 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
-import {HStack} from '@react-native-material/core';
+import {SafeAreaView, View, TouchableOpacity} from 'react-native';
+import {Title, Button, Text} from 'react-native-paper';
 
-import Delete from './assets/delete.svg';
+import Delete from '../assets/delete.svg';
 import {getLocation} from '../Utils/Utilities';
 import {EnterPinStyles} from './EnterPinStyle';
 
@@ -18,9 +12,7 @@ const EnterPinView = props => {
     PinCodeNumberStyle,
     PinCodeContainer,
     PinCodeHeaderContainer,
-    PinCodeHeaderText,
     PinCodeButtonContainer,
-    PinCodeTextStyle,
     PinCodeDisplayStyle,
   } = EnterPinStyles;
 
@@ -64,110 +56,86 @@ const EnterPinView = props => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={PinCodeContainer}>
       {getLocation()}
-      <View style={PinCodeContainer}>
+      <View>
         <View style={PinCodeHeaderContainer}>
-          <Text style={PinCodeHeaderText}>Enter Your Pin</Text>
+          <Title style={{color: 'black'}}>Enter Your Pin</Title>
         </View>
         <View style={PinCodeDisplayStyle}>
-          <Text>{pinCode.join(' ')} </Text>
+          <Text style={{color: 'black'}}>{pinCode.join(' ')} </Text>
         </View>
         <View style={PinCodeButtonContainer}>
-          <HStack m={16} spacing={16}>
+          <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(1);
-              }}>
-              <Text style={PinCodeTextStyle}>1</Text>
+              onPress={() => onPressNumber(1)}>
+              <Text style={{color: '#000'}}>1</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(2);
-              }}>
-              <Text style={PinCodeTextStyle}>2</Text>
+              onPress={() => onPressNumber(2)}>
+              <Text style={{color: '#000'}}>2</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(3);
-              }}>
-              <Text style={PinCodeTextStyle}>3</Text>
+              onPress={() => onPressNumber(3)}>
+              <Text style={{color: '#000'}}>3</Text>
             </TouchableOpacity>
-          </HStack>
-          <HStack m={16} spacing={16}>
+          </View>
+          <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(4);
-              }}>
-              <Text style={PinCodeTextStyle}>4</Text>
+              onPress={() => onPressNumber(4)}>
+              <Text style={{color: '#000'}}>4</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(5);
-              }}>
-              <Text style={PinCodeTextStyle}>5</Text>
+              onPress={() => onPressNumber(5)}>
+              <Text style={{color: '#000'}}>5</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(6);
-              }}>
-              <Text style={PinCodeTextStyle}>6</Text>
+              onPress={() => onPressNumber(6)}>
+              <Text style={{color: '#000'}}>6</Text>
             </TouchableOpacity>
-          </HStack>
-          <HStack m={16} spacing={16}>
+          </View>
+          <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(7);
-              }}>
-              <Text style={PinCodeTextStyle}>7</Text>
+              onPress={() => onPressNumber(7)}>
+              <Text style={{color: '#000'}}>7</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(8);
-              }}>
-              <Text style={PinCodeTextStyle}>8</Text>
+              onPress={() => onPressNumber(8)}>
+              <Text style={{color: '#000'}}>8</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(9);
-              }}>
-              <Text style={PinCodeTextStyle}>9</Text>
+              onPress={() => onPressNumber(9)}>
+              <Text style={{color: '#000'}}>9</Text>
             </TouchableOpacity>
-          </HStack>
-          <HStack m={16} spacing={16}>
+          </View>
+          <View style={{flexDirection: 'row'}}>
             <TouchableOpacity
-              style={{
-                width: 80,
-                alignSelf: 'center',
-              }}>
-              <Text style={{fontSize: 14, textAlign: 'center'}}>
+              style={{paddingLeft: 8, width: 100, justifyContent: 'center'}}
+              onPress={() => console.log('go to forgot passcode screen')}>
+              <Text style={{color: '#000', textAlign: 'center'}}>
                 Forgot Passcode
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressNumber(0);
-              }}>
-              <Text style={PinCodeTextStyle}>0</Text>
+              onPress={() => onPressNumber(0)}>
+              <Text style={{color: '#000'}}>0</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={PinCodeNumberStyle}
-              onPress={() => {
-                onPressBack();
-              }}>
+              onPress={() => onPressBack()}>
               <Delete height={30} width={30} />
             </TouchableOpacity>
-          </HStack>
+          </View>
         </View>
       </View>
     </SafeAreaView>
